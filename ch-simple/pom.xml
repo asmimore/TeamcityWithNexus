@@ -28,14 +28,21 @@
         </plugins>
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>nexus</id>
-            <url>http://13.233.122.200:8081/repository/mavenRepoForTeamcity/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus</id>
-            <url>http://13.233.122.200:8081/repository/mavenRepoForTeamcity/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <repositories>
+    <repository>
+        <id>nexus-releases</id>
+        <url>http://13.233.122.200:8081/repository/maven-releases/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+    </repository>
+    <repository>
+        <id>nexus-snapshots</id>
+        <url>http://13.233.122.200:8081/repository/maven-snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
 </project>
