@@ -1,65 +1,28 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.sonatype.mavenbook.simple</groupId>
-        <artifactId>parent</artifactId>
-        <version>0.8-SNAPSHOT</version>
-    </parent>
-    <groupId>org.sonatype.mavenbook.simple</groupId>
-    <artifactId>simple</artifactId>
-    <version>0.8-SNAPSHOT</version>
-    <name>Simple Chapter Project Example</name>
-    <url>http://sonatype.com/book</url>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-    <repositories>
-        <repository>
-            <id>nexus-releases</id>
-            <url>http://13.233.122.200:8081/repository/mavenRepoForTeamcity/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>nexus-snapshots</id>
-            <url>http://13.233.122.200:8081/repository/mavenRepoForTeamcity/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sonatype.mavenbook.simple</groupId>
+  <artifactId>parent</artifactId>
+  <version>0.8-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Simple Project Chapter Parent Project</name>
+  <url>http://sonatype.com/book</url>
+  <modules>
+    <module>simple</module>
+  </modules>
+   <distributionManagement>
         <repository>
             <id>nexus-releases</id>
             <name>Releases</name>
-            <url>http://13.233.122.200:8081/repository/mavenRepoForTeamcity/</url>
+            <url>http://13.233.122.200:8081/repository/myorg-maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <name>Snapshots</name>
-            <url>http://13.233.122.200:8081/repository/mavenRepoForTeamcity/</url>
+            <url>http://13.233.122.200:8081/repository/myorg-maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
